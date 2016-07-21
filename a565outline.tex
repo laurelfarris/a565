@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex}
+\renewcommand{\thesection}{Unit \arabic{section}}
+\usepackage{enumitem}
+\setlist[enumerate,1]{%
+    label={\arabic{section}.\arabic*},
+    topsep=0ex,
+    itemsep=0ex,
+}
+\setlist[enumerate,2]{%
+    label={\arabic{section}.\arabic{enumi}.\arabic*},
+    itemsep=0ex,
+    topsep=0ex,
+}
+
+
+\begin{document}
+
+\section{Energy Generation}
+\begin{enumerate}
+    \item Basics
+        \begin{enumerate}
+            \item Energy equilibrium
+            \item Nuclear interactions
+            \item Nuclear reaction rates
+            \item Energy release in nuclear reactions
+            \item Binding energy
+        \end{enumerate}
+    \item Hydrogen burning
+        \begin{enumerate}
+            \item PP-I chain
+            \item PP-II and PP-III chain
+            \item CNO cycle
+        \end{enumerate}
+    \item Things not discussed
+\end{enumerate}
+
+\section{Hydrostatics}
+\begin{enumerate}
+    \item Are stars approximately a one-fluid plasma?
+    \item Time scales of stars
+        \begin{enumerate}
+            \item Dynamical timescale
+            \item Thermal timescale
+            \item Nuclear timescale
+        \end{enumerate}
+    \item Equation of state
+        \begin{enumerate}
+            \item Preliminaries
+            \item Mean molecular weight (${\mu}$)
+            \item Ideal monatomic gas
+            \item Completely degenerate gas
+            \item Partially degenerate gas
+            \item ---
+            \item Radiation Pressure
+            \item Density-temperature equation of state landscape
+            \item Thermodynamics of an ideal gas
+            \item Mixture of ideal gas and radiation: pressure effects
+            \item Mixture of ideal gas and radiation: ionization effects
+        \end{enumerate}
+    \item Hydrostatic equilibrium
+        \begin{enumerate}
+            \item Derivation
+        \end{enumerate}
+    \item The Virial Theorem
+    \item Polytropes
+        \begin{enumerate}
+            \item Motivation and derivation
+            \item Lane-Emden equation
+            \item Polytrope solutions
+        \end{enumerate}
+\end{enumerate}
+\newpage
+\section{Energy Transport}
+\begin{enumerate}
+    \item Radiation
+        \begin{enumerate}
+            \item Basics
+            \item Diffusion: Fick's Law, temperature gradient
+            \item Frequency dependence of radiation:
+                Rosseland mean opacity
+            \item Opacity sources
+                \begin{itemize}
+                   \item 1. Scattering of photons from electrons
+                   \item 2. Free-free absorption
+                   \item 3. Bound-free absorption
+                   \item 4. Bound-bound absorption
+                   \item 5. H$^-$
+                \end{itemize}
+            \item Consequences (Plots!)
+            \item Eddington Luminosity
+            \item Final tools: introducing `$\nabla$', `$\nabla_{rad}$',
+                and `$\nabla_{ad}$'
+                \begin{itemize}
+                  \item \textbf{The True Driving Gradient $\nabla$}
+                  \item Radiation gradient $\nabla_{rad}$
+                  \item Adiabatic gradient $\nabla_{ad}$
+                \end{itemize}
+        \end{enumerate}
+    \item Conduction
+    \item Convection
+        \begin{enumerate}
+            \item The convective instability: considering $P$ and $\rho$
+                as a blob is displaced, Schwarzschild criterion
+            \item Another useful formulation
+            \item Semiconvection
+            \item One more useful formulation
+            \item Physical conditions for convection onset
+            \item Mixing length theory
+            \item Convective overshoot
+            \item Depth of outer convection zones
+                \begin{itemize}
+                  \item $T_{eff}$
+                  \item chemical abundances
+                \end{itemize}
+        \end{enumerate}
+\end{enumerate}
+\section{The Main Sequence}
+\begin{enumerate}
+    \item Summary of stellar structure
+    \item Homology relations for stars in \textbf{radiative equilibrium}
+        \begin{enumerate}
+            \item Basic idea
+            \item Dependence on mass
+            \item Dependence on ${T_{eff}}$
+            \item Dependence on mean molecular weight (${\mu}$)
+            \item Dependence on heavy metal abundances
+            \item Contracting stars in radiative equilibrium
+            \item Convective stars
+        \end{enumerate}
+    \item Evolution on the main sequence
+        \begin{enumerate}
+            \item Low-mass stars
+            \item High-mass stars
+            \item A note about \emph{very} low mass stars
+        \end{enumerate}
+    \item Summary of Main-Sequence properties
+\end{enumerate}
+\newpage
+\section{The Post Main Sequence}
+\begin{enumerate}
+    \item General considerations
+        \begin{enumerate}
+            \item Schonberg-Chandrasekhar Limit
+            \item The subgiant branch
+        \end{enumerate}
+    \item Toward and up the RGB
+        \begin{enumerate}
+            \item High-mass stars
+            \item Low-mass stars
+            \item RGB properties
+            \item Summary
+        \end{enumerate}
+    \item Helium burning
+        \begin{enumerate}
+            \item Quick tour of non-hydrogen nuclear reactions
+            \item Horizontal Branch
+            \item Location of the ZAHB
+            \item Horizontal branch evolution
+            \item Asymtotic giant branch
+            \item Thermal pulses
+        \end{enumerate}
+    \item Last stages of evolution: low-mass stars
+        \begin{enumerate}
+            \item Production of $s$ elements
+            \item Planetary nebula
+            \item White dwarfs
+            \item Further WD properties
+            \item Type Ia supernovae
+        \end{enumerate}
+    \item Last stages of evolution: low-mass stars
+        \begin{enumerate}
+            \item Nuclear burning
+            \item Type II supernova -- core collapse
+            \item Neutron star
+            \item Black hole
+        \end{enumerate}
+\end{enumerate}
+\end{document}

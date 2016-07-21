@@ -1,0 +1,43 @@
+! inlist_project 
+
+! This inlist is for running a range of different masses
+
+&star_job
+
+      pgstar_flag = .true.
+
+      create_pre_main_sequence_model = .false.	
+
+/ !end of star_job
+
+
+&controls
+     
+  ! starting specifications
+      initial_mass = 10.0 ! in Msun units
+      initial_Z = 0.02
+   
+  ! output to files and terminal
+      photostep = 50
+      profile_interval = 50
+      history_interval = 1
+      terminal_interval = 10
+      write_header_frequency = 10
+
+
+  ! when to stop
+      xa_central_lower_limit_species(1) = 'h1'
+      xa_central_lower_limit(1) = 0.35
+  ! stop when the center abundance by mass of he4 drops below this limit.
+
+  ! change these for different runs if necessary
+       star_history_name = 'history_20.data'
+       profiles_index_name = 'profiles_20.index'
+       profile_data_prefix = 'profile_20_'
+!!!	  log_directory = 'LOGS'
+       ! profile_interval = 50
+	   ! profile_data_prefix = 'profile'
+	   ! profile_data_suffix = '.data'
+
+/ ! end of controls namelist
+

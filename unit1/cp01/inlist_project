@@ -1,0 +1,57 @@
+
+! inlist_project 
+
+! This inlist is for Computer problem 1.1 with nuclear burning
+
+
+
+&star_job
+
+      pgstar_flag = .true.
+
+      create_pre_main_sequence_model = .false.	
+
+
+/ !end of star_job
+
+
+
+
+
+
+&controls
+
+     
+  ! starting specifications
+      initial_mass = 1.0 ! in Msun units
+      initial_Z = 0.02
+   
+   
+  ! output to files and terminal (write every n timesteps)
+      photostep = 50
+      profile_interval = 50
+      history_interval = 1
+      terminal_interval = 10
+      write_header_frequency = 10
+
+ 
+
+  ! when to stop
+      xa_central_lower_limit_species(1) = 'h1'
+      xa_central_lower_limit(1) = 0.69
+
+
+  ! turn nuclear reaction rates back on
+      eps_nuc_factor = 1
+      dxdt_nuc_factor = 1
+
+
+  ! change these for different runs if necessary
+      ! star_history_name = 'history_4.data'
+      ! profiles_index_name = 'profiles_4.index'
+      ! profile_data_prefix = 'profile_4_'
+
+
+
+/ ! end of controls namelist
+

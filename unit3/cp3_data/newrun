@@ -1,0 +1,134 @@
+#!/bin/tcsh
+
+## Shell script to run all MESA models at once, 
+##  saving the output appropriately. Ideally, will be 
+##  able to change any parametes I need and run as many
+##  models as I want all at once.
+
+# Remove anything sitting in output directories.
+# Edit infile to run the model you want 
+#    e.g. 1 solar mass, 20 solar masses, etc. 
+# Run all files at once, saving the output... how?
+
+#foreach mass in (0.3,0.5,1.0,5.0,10.0,20.0)
+#  edit inlist_project as mass = mass
+
+  sed -i 's/mass = 20.0/mass = 0.3/g' inlist_project 
+  sed -i 's/_19/_01/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 0.3/mass = 0.4/g' inlist_project 
+  sed -i 's/_01/_02/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 0.4/mass = 0.5/g' inlist_project 
+  sed -i 's/_02/_03/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 0.5/mass = 0.6/g' inlist_project 
+  sed -i 's/_03/_04/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 0.6/mass = 0.7/g' inlist_project 
+  sed -i 's/_04/_05/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 0.7/mass = 0.8/g' inlist_project 
+  sed -i 's/_05/_06/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 0.8/mass = 0.9/g' inlist_project 
+  sed -i 's/_06/_07/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 0.9/mass = 1.0/g' inlist_project 
+  sed -i 's/_07/_08/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 1.0/mass = 2.0/g' inlist_project 
+  sed -i 's/_08/_09/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 2.0/mass = 3.0/g' inlist_project 
+  sed -i 's/_09/_10/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 3.0/mass = 4.0/g' inlist_project 
+  sed -i 's/_10/_11/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 4.0/mass = 5.0/g' inlist_project 
+  sed -i 's/_11/_12/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+  
+  sed -i 's/mass = 5.0/mass = 6.0/g' inlist_project 
+  sed -i 's/_12/_13/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 6.0/mass = 7.0/g' inlist_project 
+  sed -i 's/_13/_14/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 7.0/mass = 8.0/g' inlist_project 
+  sed -i 's/_14/_15/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 8.0/mass = 9.0/g' inlist_project 
+  sed -i 's/_15/_16/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 9.0/mass = 10.0/g' inlist_project 
+  sed -i 's/_16/_17/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 10.0/mass = 15.0/g' inlist_project 
+  sed -i 's/_17/_18/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  sed -i 's/mass = 15.0/mass = 20.0/g' inlist_project 
+  sed -i 's/_18/_19/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+
+ # mv LOGS/* output
+ # mv photos/* output
+
+

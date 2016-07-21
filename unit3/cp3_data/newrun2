@@ -1,0 +1,26 @@
+#!/bin/tcsh
+
+## Shell script to run all MESA models at once, 
+##  saving the output appropriately. Ideally, will be 
+##  able to change any parametes I need and run as many
+##  models as I want all at once.
+
+# Remove anything sitting in output directories.
+# Edit infile to run the model you want 
+#    e.g. 1 solar mass, 20 solar masses, etc. 
+# Run all files at once, saving the output... how?
+
+#  edit inlist_project as mass = mass
+
+
+#foreach mass in (0.3,0.5,1.0,5.0,10.0,20.0)
+int = 10
+ 
+  sed -i 's/mass = 20.0/mass = 0.3/g' inlist_project 
+  sed -i 's/_19/_01/g' inlist_project
+  ./clean
+  ./mk
+  ./rn
+
+  mv LOGS/* output
+  mv photos/* output
