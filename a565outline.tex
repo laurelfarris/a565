@@ -2,8 +2,10 @@
 \usepackage[margin=1in]{geometry}
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1ex}
+\usepackage{xcolor}
 \renewcommand{\thesection}{Unit \arabic{section}}
 \usepackage{enumitem}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \setlist[enumerate,1]{%
     label={\arabic{section}.\arabic*},
     topsep=0ex,
@@ -83,16 +85,15 @@
                 Rosseland mean opacity
             \item Opacity sources
                 \begin{itemize}
-                   \item 1. Scattering of photons from electrons
-                   \item 2. Free-free absorption
-                   \item 3. Bound-free absorption
-                   \item 4. Bound-bound absorption
-                   \item 5. H$^-$
+                   \item Scattering of photons from electrons
+                   \item Free-free absorption
+                   \item Bound-free absorption
+                   \item Bound-bound absorption
+                   \item H$^-$
                 \end{itemize}
             \item Consequences (Plots!)
             \item Eddington Luminosity
-            \item Final tools: introducing `$\nabla$', `$\nabla_{rad}$',
-                and `$\nabla_{ad}$'
+            \item Final tools:
                 \begin{itemize}
                   \item \textbf{The True Driving Gradient $\nabla$}
                   \item Radiation gradient $\nabla_{rad}$
@@ -105,12 +106,12 @@
             \item The convective instability: considering $P$ and $\rho$
                 as a blob is displaced, Schwarzschild criterion
             \item Another useful formulation
-            \item Semiconvection
+            \item Semiconvection (\textit{Ledoux criterion})
             \item One more useful formulation
             \item Physical conditions for convection onset
             \item Mixing length theory
             \item Convective overshoot
-            \item Depth of outer convection zones
+            \item \textcolor{red}{Depth of outer convection zones}
                 \begin{itemize}
                   \item $T_{eff}$
                   \item chemical abundances
