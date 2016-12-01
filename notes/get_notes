@@ -1,0 +1,11 @@
+#!/bin/bash
+
+declare -a my_dates=(
+    "08_27" "09_01" "09_03" "09_08" "09_10" "09_15"
+    "09_17" "09_22" "09_24" "09_29" "10_01" "10_15" "10_20" "10_22"
+    "10_27" "10_29" "11_03"
+    )
+
+for f in ${my_dates[@]}; do
+    wget -U firefox "astronomy.nmsu.edu/jasonj/565/docs/${f}.pdf"; done
+    #echo ${f}.pdf; done
