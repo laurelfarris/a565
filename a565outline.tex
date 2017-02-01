@@ -1,4 +1,5 @@
 \documentclass{article}
+\renewcommand\familydefault{\sfdefault}
 \usepackage[margin=1in]{geometry}
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1ex}
@@ -6,16 +7,8 @@
 \renewcommand{\thesection}{Unit \arabic{section}}
 \usepackage{enumitem}
 \renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\setlist[enumerate,1]{%
-    label={\arabic{section}.\arabic*},
-    topsep=0ex,
-    itemsep=0ex,
-}
-\setlist[enumerate,2]{%
-    label={\arabic{section}.\arabic{enumi}.\arabic*},
-    itemsep=0ex,
-    topsep=0ex,
-}
+%\setenumerate{ label={\arabic{section}.\arabic*}, topsep=0ex, itemsep=0ex, }
+%\setlist[enumerate,2]{ label={\arabic{section}.\arabic{enumi}.\arabic*}, itemsep=0ex, topsep=0ex, }
 
 
 \begin{document}
@@ -39,6 +32,7 @@
     \item Things not discussed
 \end{enumerate}
 
+\newpage
 \section{Hydrostatics}
 \begin{enumerate}
     \item Are stars approximately a one-fluid plasma?
@@ -74,50 +68,109 @@
             \item Polytrope solutions
         \end{enumerate}
 \end{enumerate}
+
 \newpage
 \section{Energy Transport}
 \begin{enumerate}
     \item Radiation
         \begin{enumerate}
             \item Basics
-            \item Diffusion: Fick's Law, temperature gradient
-            \item Frequency dependence of radiation:
-                Rosseland mean opacity
+                \begin{itemize}
+                    \item Efficiency of energy transfer depends on:
+                        \begin{enumerate}[label=\arabic{*}.]
+                            \item Temperature gradient of the solar interior
+                            \item Mean free path for photons: $\ell = \frac{1}{\kappa\rho}$
+                        \end{enumerate}
+                \end{itemize}
+            \item Diffusion
+                \begin{itemize}
+                    \item Fick's Law: $ F = -D \nabla_{r} n $;
+                        $ D = \frac{1}{3}\overline{v}\ell $
+                        = diffusion coefficient
+                    \item Temperature gradient: $ \frac{\mathrm{d}T}{\mathrm{d}r} = -\frac{3}{16\pi ac} \frac{\kappa\rho}{r^{2}}\frac{L}{T^{3}} $
+                \end{itemize}
+            \item Frequency dependence of radiation
+                \begin{itemize}
+                    \item Rosseland mean opacity, $\kappa_{R}$
+                \end{itemize}
             \item Opacity sources
                 \begin{itemize}
-                   \item Scattering of photons from electrons
-                   \item Free-free absorption
-                   \item Bound-free absorption
-                   \item Bound-bound absorption
-                   \item H$^-$
+                    \item $\kappa = \kappa_{0} \rho^{n} T^{-s}$ [cm$^{2}$ g$^{-1}$]
+                    \item \textit{Kramer's opacities} scale as $ \kappa \sim \rho T^{-3.5} $
+                        ($n = 1, s = 3.5$)
+                    \item Four main sources:
+                        \begin{enumerate}
+                            \item Compton/Thomson scattering (photon-electron)
+                            \item Free-free absorption (Kramer's, core)
+                            \item Bound-free absorption (Kramer's, surface)
+                                \begin{itemize}
+                                    \item H$^{-}$: Sensitive to metallicity,
+                                        needs free electrons,
+                                        $\nu$ = IR and up
+                                \end{itemize}
+                            \item Bound-bound absorption
+                        \end{enumerate}
                 \end{itemize}
-            \item Consequences (Plots!)
+            \item Consequences (See figures)
             \item Eddington Luminosity
+                \begin{itemize}
+                    \item Maximum luminosity a star can have and still balance gravity
+                \end{itemize}
             \item Final tools:
                 \begin{itemize}
-                  \item \textbf{The True Driving Gradient $\nabla$}
-                  \item Radiation gradient $\nabla_{rad}$
-                  \item Adiabatic gradient $\nabla_{ad}$
+                    \item $\nabla \equiv \frac{d ln T}{d ln P}$ = True driving gradient:
+                    \item $\nabla_{rad}$ = Radiation gradient, slope required if all
+                        luminosity was carried by radiation through diffusion
+                    \item $\nabla_{ad}$ = Adiabatic gradient, rate that temperature of
+                        a parcel of gas changes with height
                 \end{itemize}
         \end{enumerate}
-    \item Conduction
+    \item Conduction:
+        $ \frac{1}{\kappa_{tot}} = \frac{1}{\kappa_{R}} + \frac{1}{\kappa_{cond}}$
     \item Convection
         \begin{enumerate}
-            \item The convective instability: considering $P$ and $\rho$
-                as a blob is displaced, Schwarzschild criterion
-            \item Another useful formulation
-            \item Semiconvection (\textit{Ledoux criterion})
+            \item The convective instability:
+                Schwarzschild criterion, Brunt-Vaisala frequency
+            \item Another useful formulation:
+                \[
+                    T dS = dU + PdV
+                    \]
+                \[
+                    \frac{dS}{dr} = c_{P} (\nabla - \nabla_{ad})
+                    \frac{d ln P}{dr}
+                    \]
+                Entropy is constant for adiabatic processes
+            \item Semiconvection
+                \[
+                    N^{2} = \frac{g^{2}\rho}{P}
+                    \left( \nabla_{ad} - \nabla + \nabla_{\mu} \right)
+                    \]
+                \textit{Ledoux criterion}:
+                Schwarzschild criterion is satisfied, but the medium is still
+                stable due to a positive composition gradient
             \item One more useful formulation
             \item Physical conditions for convection onset
+                \begin{itemize}
+                    \item L/m is large
+                    \item $\kappa$ is large
+                    \item $\rho/T^{3}$ is large
+                    \item $\nabla_{ad} = 1 - 1/\gamma $ is small
+                \end{itemize}
             \item Mixing length theory
-            \item Convective overshoot
-            \item \textcolor{red}{Depth of outer convection zones}
+            \item Convective overshoot: momentum carries convection beyond the layer
+                where parcels become stable, possibly depositing mixed material in
+                stable regions.
+            \item Depth of outer convection zones
                 \begin{itemize}
                   \item $T_{eff}$
                   \item chemical abundances
                 \end{itemize}
+                Higher metallicity $\longrightarrow$ higher opacity and deeper
+                convection zones
         \end{enumerate}
 \end{enumerate}
+
+\newpage
 \section{The Main Sequence}
 \begin{enumerate}
     \item Summary of stellar structure
@@ -139,12 +192,13 @@
         \end{enumerate}
     \item Summary of Main-Sequence properties
 \end{enumerate}
+
 \newpage
 \section{The Post Main Sequence}
 \begin{enumerate}
     \item General considerations
         \begin{enumerate}
-            \item Schonberg-Chandrasekhar Limit
+            \item Sch\.{o}nberg-Chandrasekhar Limit
             \item The subgiant branch
         \end{enumerate}
     \item Toward and up the RGB
@@ -171,7 +225,7 @@
             \item Further WD properties
             \item Type Ia supernovae
         \end{enumerate}
-    \item Last stages of evolution: low-mass stars
+    \item Last stages of evolution: high-mass stars
         \begin{enumerate}
             \item Nuclear burning
             \item Type II supernova -- core collapse
